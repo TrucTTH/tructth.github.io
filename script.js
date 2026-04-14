@@ -168,9 +168,13 @@
   // ── Back to top + Floating CTA ──
   const btt = document.querySelector('.back-to-top');
   const fcta = document.querySelector('.floating-cta');
+  const contactSection = document.getElementById('contact');
   window.addEventListener('scroll', () => {
     if (btt) btt.classList.toggle('visible', scrollY > 500);
-    if (fcta) fcta.classList.toggle('visible', scrollY > 300);
+    if (fcta && contactSection) {
+      const contactTop = contactSection.getBoundingClientRect().top;
+      fcta.classList.toggle('visible', scrollY > 300 && contactTop > window.innerHeight * 0.5);
+    }
   }, { passive: true });
   if (btt) btt.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
