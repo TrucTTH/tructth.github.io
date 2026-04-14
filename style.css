@@ -255,9 +255,9 @@ ul{list-style:none}
 [data-magnetic]{transition:transform .25s ease}
 
 /* ── Floating CTA (mobile only) ── */
-.floating-cta{display:none;position:fixed;bottom:24px;right:16px;padding:12px 28px;border-radius:var(--radius-pill);background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;font-weight:600;font-size:.88rem;box-shadow:6px 6px 20px rgba(255,107,157,.35),inset 2px 2px 4px rgba(255,255,255,.25);z-index:90;opacity:0;transform:translateY(20px);transition:opacity .3s,transform .3s;text-decoration:none}
+.floating-cta{display:none;position:fixed;bottom:24px;right:16px;padding:14px 32px;border-radius:var(--radius-pill);background:var(--pink);color:#fff;font-weight:600;font-size:.95rem;box-shadow:6px 6px 16px rgba(255,107,157,.25),inset 2px 2px 4px rgba(255,255,255,.3);z-index:90;opacity:0;transform:translateY(20px);transition:opacity .3s,transform .3s;text-decoration:none}
 .floating-cta.visible{opacity:1;transform:translateY(0)}
-.floating-cta:active{transform:scale(.95)}
+.floating-cta:active{transform:translateY(-2px) scale(.97);box-shadow:8px 8px 20px rgba(255,107,157,.3),inset 2px 2px 4px rgba(255,255,255,.4)}
 
 /* ── Responsive ── */
 
