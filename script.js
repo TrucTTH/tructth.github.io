@@ -89,6 +89,18 @@
     });
   });
 
+  // ── Theme toggle ──
+  const themeBtn = document.querySelector('.theme-toggle');
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'blue') document.body.classList.add('theme-blue');
+  const updateIcon = () => { themeBtn.textContent = document.body.classList.contains('theme-blue') ? '🌸' : '💎'; };
+  updateIcon();
+  themeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('theme-blue');
+    localStorage.setItem('theme', document.body.classList.contains('theme-blue') ? 'blue' : 'pink');
+    updateIcon();
+  });
+
   // ── Init Lucide icons ──
   lucide.createIcons();
 
