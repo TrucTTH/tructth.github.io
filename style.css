@@ -212,8 +212,10 @@ ul{list-style:none}
 .about-content{max-width:720px;margin:0 auto;text-align:center}
 .about-content p{color:var(--text-muted);margin-bottom:16px}
 .about-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;justify-content:center}
-.tag{background:var(--glass-bg-sm);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);padding:6px 16px;border-radius:var(--radius-pill);font-size:.82rem;color:var(--text-muted);border:var(--glass-border-sm);transition:all .3s;font-weight:500}
-.tag:hover{color:var(--pink);transform:translateY(-2px);background:var(--glass-bg-hover);border:var(--glass-border-hover)}
+.tag{background:var(--glass-bg-sm);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);padding:6px 16px;border-radius:var(--radius-pill);font-size:.82rem;color:var(--text-muted);border:var(--glass-border-sm);transition:all .3s;font-weight:500;cursor:default;position:relative;overflow:hidden}
+.tag::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transition:left .5s}
+.tag:hover{color:var(--pink);transform:translateY(-3px) scale(1.05);background:var(--glass-bg-hover);border:var(--glass-border-hover);box-shadow:0 4px 16px rgba(var(--pink),.15)}
+.tag:hover::before{left:100%}
 
 /* ── Services ── */
 .services{text-align:center}
@@ -336,6 +338,7 @@ ul{list-style:none}
   .nav-desktop{display:none!important}
   .mobile-menu{display:none!important}
   .floating-cta{display:block}
+  .theme-toggle{bottom:80px}
   .nav-toggle{display:none}
   .nav-mobile{position:absolute;top:56px;right:0;width:180px;background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border:var(--glass-border);border-radius:20px;flex-direction:column;padding:12px;gap:2px;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-8px);transition:opacity .2s,visibility .2s,transform .2s}
   .nav-mobile.open{display:flex;opacity:1;visibility:visible;pointer-events:all;transform:translateY(0)}
