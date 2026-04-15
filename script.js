@@ -91,14 +91,20 @@
 
   // ── Theme toggle ──
   const themeBtn = document.querySelector('.theme-toggle');
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'blue') document.body.classList.add('theme-blue');
-  const updateIcon = () => { themeBtn.textContent = document.body.classList.contains('theme-blue') ? '🌸' : '💎'; };
-  updateIcon();
+  const themes = ['pink', 'blue', 'dark', 'dark-blue'];
+  const icons = { pink: '💎', blue: '🌙', dark: '🔷', 'dark-blue': '🌸' };
+  const classes = { pink: '', blue: 'theme-blue', dark: 'theme-dark', 'dark-blue': 'theme-dark-blue' };
+  let currentTheme = localStorage.getItem('theme') || 'dark-blue';
+  const applyTheme = t => {
+    document.body.classList.remove('theme-blue', 'theme-dark', 'theme-dark-blue');
+    if (classes[t]) document.body.classList.add(classes[t]);
+    themeBtn.textContent = icons[t];
+  };
+  applyTheme(currentTheme);
   themeBtn.addEventListener('click', () => {
-    document.body.classList.toggle('theme-blue');
-    localStorage.setItem('theme', document.body.classList.contains('theme-blue') ? 'blue' : 'pink');
-    updateIcon();
+    currentTheme = themes[(themes.indexOf(currentTheme) + 1) % themes.length];
+    localStorage.setItem('theme', currentTheme);
+    applyTheme(currentTheme);
   });
 
   // ── Init Lucide icons ──
