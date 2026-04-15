@@ -170,7 +170,7 @@ ul{list-style:none}
 
 /* Hero avatar */
 .hero-avatar{position:relative;display:flex;justify-content:center;align-items:flex-end}
-.hero-avatar img{width:100%;max-width:380px;height:auto;filter:drop-shadow(6px 10px 20px rgba(166,140,180,.3));mix-blend-mode:multiply;animation:float 4s ease-in-out infinite;-webkit-mask-image:linear-gradient(to bottom,#000 60%,transparent 98%);mask-image:linear-gradient(to bottom,#000 60%,transparent 98%)}
+.hero-avatar img,.hero-avatar picture img{width:100%;max-width:380px;height:auto;filter:drop-shadow(6px 10px 20px rgba(166,140,180,.3));mix-blend-mode:multiply;animation:float 4s ease-in-out infinite;-webkit-mask-image:linear-gradient(to bottom,#000 60%,transparent 98%);mask-image:linear-gradient(to bottom,#000 60%,transparent 98%)}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 .hero-badge{position:absolute;bottom:12%;right:0;background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);color:var(--pink);padding:10px 22px;border-radius:var(--radius-pill);font-size:.85rem;font-weight:600;border:var(--glass-border);animation:float 4s ease-in-out infinite;animation-delay:1s}
 
