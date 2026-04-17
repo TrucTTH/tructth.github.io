@@ -140,10 +140,27 @@
   // ── Contact form ──
   document.getElementById('contactForm').addEventListener('submit', e => {
     e.preventDefault();
-    const btn = e.target.querySelector('button');
-    btn.textContent = 'Sent! ✓';
+    const form = e.target;
+    const btn = form.querySelector('button');
+    btn.textContent = 'Sending...';
     btn.disabled = true;
-    setTimeout(() => { btn.innerHTML = 'Send Message <i data-lucide="send" class="icon-inline"></i>'; btn.disabled = false; e.target.reset(); lucide.createIcons(); }, 3000);
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(r => {
+      if (r.ok) {
+        btn.textContent = 'Sent! ✓';
+        form.reset();
+        setTimeout(() => { btn.innerHTML = 'Send Message <i data-lucide="send" class="icon-inline"></i>'; btn.disabled = false; lucide.createIcons(); }, 3000);
+      } else {
+        btn.textContent = 'Error, try again';
+        btn.disabled = false;
+      }
+    }).catch(() => {
+      btn.textContent = 'Error, try again';
+      btn.disabled = false;
+    });
   });
 
   // ── Magnetic buttons ──
