@@ -64,7 +64,7 @@
       counterObs.unobserve(el);
     });
   }, { threshold: 0.5 });
-  document.querySelectorAll('.stat-number').forEach(el => counterObs.observe(el));
+  document.querySelectorAll('.stat-number[data-count]').forEach(el => counterObs.observe(el));
 
   // ── Smooth scroll ──
   document.querySelectorAll('a[href^="#"]').forEach(a =>
