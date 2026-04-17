@@ -144,28 +144,22 @@
     const btn = form.querySelector('button');
     btn.textContent = 'Sending...';
     btn.disabled = true;
-    grecaptcha.ready(() => {
-      grecaptcha.execute('6LdxQrwsAAAAAKNOmUP8Ct_11OHUcfmxfGHWj7eZ', {action: 'submit'}).then(token => {
-        const data = new FormData(form);
-        data.append('g-recaptcha-response', token);
-        fetch(form.action, {
-          method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        }).then(r => {
-          if (r.ok) {
-            btn.textContent = 'Sent! ✓';
-            form.reset();
-            setTimeout(() => { btn.innerHTML = 'Send Message <i data-lucide="send" class="icon-inline"></i>'; btn.disabled = false; lucide.createIcons(); }, 3000);
-          } else {
-            btn.textContent = 'Error, try again';
-            btn.disabled = false;
-          }
-        }).catch(() => {
-          btn.textContent = 'Error, try again';
-          btn.disabled = false;
-        });
-      });
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(r => {
+      if (r.ok) {
+        btn.textContent = 'Sent! ✓';
+        form.reset();
+        setTimeout(() => { btn.innerHTML = 'Send Message <i data-lucide="send" class="icon-inline"></i>'; btn.disabled = false; lucide.createIcons(); }, 3000);
+      } else {
+        btn.textContent = 'Error, try again';
+        btn.disabled = false;
+      }
+    }).catch(() => {
+      btn.textContent = 'Error, try again';
+      btn.disabled = false;
     });
   });
 

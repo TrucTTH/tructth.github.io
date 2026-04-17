@@ -31,7 +31,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="https://www.google.com/recaptcha/api.js?render=6LdxQrwsAAAAAKNOmUP8Ct_11OHUcfmxfGHWj7eZ" async defer></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
   <!-- Soft background blobs -->
@@ -369,6 +369,7 @@
           <p class="reveal">Let's chat about how I can support your business. Whether you have a specific project in mind or just need an extra pair of hands, I'd love to hear&nbsp;from&nbsp;you.</p>
         </div>
         <form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/mjgjwkya" method="POST">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
           <div class="form-group">
             <label for="name">Your Name</label>
             <input type="text" id="name" name="name" required placeholder="Jane Doe">
@@ -394,6 +395,7 @@
             <label for="message">Tell Me More</label>
             <textarea id="message" name="message" rows="4" placeholder="A brief description of what you need…"></textarea>
           </div>
+          <div class="g-recaptcha" data-sitekey="6LdITLwsAAAAAK3EXDt-XoGrtU1aT-FqTMQ84Qpp" data-theme="dark" style="margin-bottom:16px;transform:scale(0.85);transform-origin:left top"></div>
           <button type="submit" class="btn btn-primary btn-full">Send Message <i data-lucide="send" class="icon-inline"></i></button>
         </form>
       </div>
