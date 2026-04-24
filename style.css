@@ -252,16 +252,16 @@ ul{list-style:none}
 
 /* ── Portfolio ── */
 .portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
-.portfolio-card{padding:32px;border-radius:var(--radius);background:var(--glass-bg);backdrop-filter:blur(var(--glass-blur));border:var(--glass-border);transition:transform .3s}
+.portfolio-card{padding:32px;border-radius:var(--radius);background:var(--glass-bg);backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));border:var(--glass-border);transition:transform .3s}
 .portfolio-card:hover{transform:translateY(-4px)}
 .portfolio-tag{display:inline-block;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--pink);margin-bottom:12px}
 .portfolio-card h4{font-family:'Playfair Display',serif;font-size:1.25rem;margin-bottom:10px}
 .portfolio-card>p{font-size:.9rem;opacity:.85;line-height:1.6;margin-bottom:16px}
-.portfolio-results{display:flex;gap:16px;margin-bottom:16px}
-.portfolio-stat{font-size:.85rem;padding:8px 14px;border-radius:8px;background:color-mix(in srgb,var(--pink) 8%,transparent)}
+.portfolio-results{display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.portfolio-stat{font-size:.85rem;padding:8px 14px;border-radius:8px;background:color-mix(in srgb,var(--pink) 10%,transparent);border:1px solid color-mix(in srgb,var(--pink) 15%,transparent)}
 .portfolio-stat strong{color:var(--pink)}
 .portfolio-scope{display:flex;flex-wrap:wrap;gap:6px}
-.portfolio-scope span{font-size:.7rem;padding:4px 10px;border-radius:20px;background:color-mix(in srgb,var(--text) 8%,transparent);opacity:.7}
+.portfolio-scope span{font-size:.7rem;padding:4px 10px;border-radius:20px;background:color-mix(in srgb,var(--text) 10%,transparent);opacity:.7}
 /* ── Why Me ── */
 .why{text-align:center}
 .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:left}
