@@ -3,502 +3,432 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Truc Tran | Operations & Back-Office Support</title>
+  <title>Trúc Trần | Operations & Back-Office Support</title>
   <meta name="description" content="6+ years in operations, finance, and back-office management. I help businesses run smoother, faster, and more human.">
-  <meta name="keywords" content="operations manager, virtual assistant, back-office operations, revenue operations, finance admin, Truc Tran, ChucChuc">
-  <meta name="author" content="Truc Tran">
+  <meta name="keywords" content="operations manager, virtual assistant, back-office operations, revenue operations, finance admin, Trúc Trần, Truc Tran, ChucChuc">
+  <meta name="author" content="Trúc Trần">
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#FF6B9D">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12141F" media="(prefers-color-scheme: dark)">
 
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://chucchuc.com/">
-  <meta property="og:title" content="Truc Tran | Operations & Back-Office Support">
+  <meta property="og:title" content="Trúc Trần | Operations & Back-Office Support">
   <meta property="og:description" content="6+ years in operations, finance, and back-office management. I help businesses run smoother, faster, and more human.">
   <meta property="og:image" content="https://chucchuc.com/icon-512.png">
-
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Truc Tran | Operations & Back-Office Support">
+  <meta name="twitter:title" content="Trúc Trần | Operations & Back-Office Support">
   <meta name="twitter:description" content="6+ years in operations, finance, and back-office management. I help businesses run smoother, faster, and more human.">
   <meta name="twitter:image" content="https://chucchuc.com/icon-512.png">
+
+  <script>
+    // Set theme before paint to avoid a flash.
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('tt-theme'); } catch (e) {}
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.classList.add('js');
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="avatar.webp" type="image/webp">
   <link rel="stylesheet" href="style.css">
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js" integrity="sha384-ieG+IKD0d/ZPXyCBTMVAbqsQdns8QGJR/e26WMw7M4fkaI/rHcS/YIoi+ah9WGge" crossorigin="anonymous" defer></script>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <!-- Soft background blobs -->
-  <div class="blob blob-1" aria-hidden="true"></div>
-  <div class="blob blob-2" aria-hidden="true"></div>
-  <div class="blob blob-3" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Navigation -->
-  <div class="mobile-menu">
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <img src="logo-color.webp" alt="TT" class="nav-toggle-logo logo-light"><img src="logo-silver.webp" alt="TT" class="nav-toggle-logo logo-dark">
-    </button>
-    <ul class="nav-links nav-mobile">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#why">Why Me</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#contact" class="btn-nav">Let's Talk</a></li>
-    </ul>
-  </div>
-  <nav class="nav nav-desktop" role="navigation" aria-label="Main navigation">
-    <a href="#hero" class="nav-logo">Truc <em>Tran</em></a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#why">Why Me</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#contact" class="btn-nav">Let's Talk</a></li>
-    </ul>
-  </nav>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#top" class="wordmark">Trúc Trần</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#why">Why me</a></li>
+        <li><a href="#process">Process</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn theme-toggle" type="button" aria-label="Switch to dark theme">
+          <i data-lucide="moon" class="icon-moon" aria-hidden="true"></i>
+          <i data-lucide="sun" class="icon-sun" aria-hidden="true"></i>
+        </button>
+        <a href="#contact" class="btn btn-primary btn-sm nav-cta">Let's talk</a>
+        <button class="icon-btn nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <i data-lucide="menu" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
 
-  <!-- Hero -->
-  <section id="hero" class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <p class="hero-tag reveal"><i data-lucide="hand" class="icon-inline"></i> Hi, I'm Trúc <span class="pronunciation">(sounds like "Troo(k)")</span></p>
-        <h1 class="reveal">Your Flexible &<br><em>Reliable</em> Operations Partner</h1>
-        <p class="hero-sub reveal">With 6+ years in back-office operations, finance, and people management, I help businesses run smoother, faster, and more human. You focus on growth. I handle&nbsp;the&nbsp;rest.</p>
-        <div class="hero-cta reveal">
-          <a href="#contact" class="btn btn-primary" data-magnetic>Work With Me</a>
-          <a href="#services" class="btn btn-outline" data-magnetic>See What I Do</a>
+  <main id="main">
+    <!-- Hero -->
+    <section id="top" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Your flexible, reliable <span class="accent">operations partner</span></h1>
+          <p class="lead">Hi, I'm Trúc <span class="say">(sounds like “Troo(k)”)</span>. With 6+ years in back-office operations, finance, and people management, I help businesses run smoother, faster, and more human. You focus on growth. I handle&nbsp;the&nbsp;rest.</p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary">Work with me <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+            <a href="#services" class="btn btn-ghost">See what I do</a>
+          </div>
+          <p class="availability"><span class="dot" aria-hidden="true"></span> Currently accepting new clients</p>
         </div>
-        <div class="availability reveal">
-          <span class="avail-dot"></span> Currently accepting new clients
-        </div>
-        <div class="hero-stats reveal">
-          <div class="stat">
-            <span class="stat-number" data-count="6">0</span><span>+</span>
-            <p>Years Experience</p>
-          </div>
-          <div class="stat">
-            <span class="stat-number" data-count="200">0</span><span>+</span>
-            <p>Expats Supported</p>
-          </div>
-          <div class="stat">
-            <span class="stat-number" data-count="15">0</span><span>%</span>
-            <p>Faster Payments</p>
-          </div>
-          <div class="stat">
-            <span class="stat-number" style="font-size:1.6rem">6-Fig</span><span></span>
-            <p>Monthly Collections (USD)</p>
-          </div>
+
+        <div class="portrait">
+          <div class="portrait-disc" aria-hidden="true"></div>
+          <picture>
+            <source srcset="avatar.webp" type="image/webp">
+            <img src="avatar-sm.png" alt="Illustrated portrait of Trúc" width="506" height="760" fetchpriority="high">
+          </picture>
+          <p class="sticker sticker-mint"><strong>4 → 2.5 wks</strong> work-permit processing</p>
+          <p class="sticker sticker-butter"><strong>10%</strong> procurement cost cut</p>
         </div>
       </div>
-      <div class="hero-avatar reveal">
-        <div class="avatar-deco deco-1" aria-hidden="true"></div>
-        <div class="avatar-deco deco-2" aria-hidden="true"></div>
-        <div class="avatar-deco deco-3" aria-hidden="true"></div>
-        <picture>
-          <source srcset="avatar.webp" type="image/webp">
-          <img src="avatar-sm.png" alt="Trúc, Virtual Assistant" loading="eager" width="333" height="500">
-        </picture>
-        <div class="hero-socials">
-          <a href="#" class="social-btn social-linkedin" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-          <a href="#" class="social-btn social-facebook" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-          <a href="#" class="social-btn social-upwork" aria-label="Upwork"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/></svg></a>
-        </div>
+
+      <div class="container">
+        <dl class="stats">
+          <div class="stat">
+            <dt>Years in operations</dt>
+            <dd><span data-count="6">6</span>+</dd>
+          </div>
+          <div class="stat">
+            <dt>Expats supported</dt>
+            <dd><span data-count="200">200</span>+</dd>
+          </div>
+          <div class="stat">
+            <dt>Faster collections</dt>
+            <dd><span data-count="15">15</span>%</dd>
+          </div>
+          <div class="stat">
+            <dt>Monthly collections (USD)</dt>
+            <dd>6-fig</dd>
+          </div>
+        </dl>
       </div>
-    </div>
-    <div class="container">
-      <div class="hero-tools reveal">
-        <p>Tools I Work With</p>
+    </section>
+
+    <!-- Tools -->
+    <section class="tools" aria-label="Tools I work with">
+      <div class="container tools-row">
+        <p class="tools-label">Tools I work with</p>
         <div class="marquee">
-          <div class="marquee-track">
-            <span class="marquee-item">Microsoft Excel</span>
-            <span class="marquee-item">Power BI</span>
-            <span class="marquee-item">Google Workspace</span>
-            <span class="marquee-item">CRM Systems</span>
-            <span class="marquee-item">Accounting Software</span>
-            <span class="marquee-item">Slack</span>
-            <span class="marquee-item">Notion</span>
-            <span class="marquee-item">Zoom</span>
-            <span class="marquee-item">Microsoft Excel</span>
-            <span class="marquee-item">Power BI</span>
-            <span class="marquee-item">Google Workspace</span>
-            <span class="marquee-item">CRM Systems</span>
-            <span class="marquee-item">Accounting Software</span>
-            <span class="marquee-item">Slack</span>
-            <span class="marquee-item">Notion</span>
-            <span class="marquee-item">Zoom</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="scroll-indicator" aria-hidden="true">
-      <div class="mouse"><div class="wheel"></div></div>
-      <p>Scroll to explore</p>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="about section">
-    <div class="container">
-      <div class="about-content">
-        <h2 class="section-label reveal">About Me</h2>
-        <h3 class="section-title reveal">More Than Just an Assistant.<br>I'm Your Operations Partner</h3>
-        <p class="reveal">I've spent the last six years making back-office operations run smoother, faster, and more human. From managing employee lifecycle operations for 200+ expats to running full office and finance functions for growing companies, I enjoy building systems that help people do their&nbsp;best&nbsp;work.</p>
-        <p class="reveal">Today, I lead receivables and sales operations, and I'm looking to bring that same energy to growing teams who need operational backbone without the overhead of a&nbsp;full-time&nbsp;hire.</p>
-        <p class="reveal">I don't just complete tasks. I build processes, cut costs, streamline workflows, and make sure nothing falls through&nbsp;the&nbsp;cracks.</p>
-        <div class="about-tags reveal">
-          <span class="tag">Operations Management</span>
-          <span class="tag">Process Improvement</span>
-          <span class="tag">Revenue Operations</span>
-          <span class="tag">Payroll & Finance</span>
-          <span class="tag">Vendor Management</span>
-          <span class="tag">Compliance</span>
-          <span class="tag">Bilingual (EN/VI)</span>
-          </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="services section">
-    <div class="container">
-      <h2 class="section-label reveal">What I Offer</h2>
-      <h3 class="section-title reveal">Services Tailored to<br>Your Business Needs</h3>
-      <p class="section-sub reveal">Every business is different. I offer a flexible range of services that can be mixed, matched, and scaled to fit exactly what you need.</p>
-      <div class="services-grid">
-        <div class="service-card clay reveal" data-tilt>
-          <div class="service-icon"><i data-lucide="clipboard-list"></i></div>
-          <h4>Operational & People Support</h4>
-          <p>Day-to-day operations, people management, and HR coordination that keep your team running smoothly and&nbsp;compliantly.</p>
-          <ul class="service-list">
-            <li>Workflow & process management</li>
-            <li>Onboarding & employee lifecycle</li>
-            <li>Payroll & compliance</li>
-            <li>Visa & work permit coordination</li>
+          <ul class="marquee-track">
+            <li>Microsoft Excel</li><li>Power BI</li><li>Google Workspace</li><li>CRM systems</li><li>Accounting software</li><li>Slack</li><li>Notion</li><li>Zoom</li>
           </ul>
-        </div>
-        <div class="service-card clay reveal" data-tilt>
-          <div class="service-icon"><i data-lucide="file-text"></i></div>
-          <h4>Documentation & Reports</h4>
-          <p>Professional document creation, formatting, proofreading, and report generation, ensuring everything is polished and presentation-ready.</p>
-          <ul class="service-list">
-            <li>Report writing & formatting</li>
-            <li>Presentation creation</li>
-            <li>Proofreading & editing</li>
-            <li>Template development</li>
-          </ul>
-        </div>
-        <div class="service-card clay reveal" data-tilt>
-          <div class="service-icon"><i data-lucide="users"></i></div>
-          <h4>Project Coordination</h4>
-          <p>Keeping projects on track by managing timelines, following up with stakeholders, and ensuring deliverables are met on time.</p>
-          <ul class="service-list">
-            <li>Timeline & milestone tracking</li>
-            <li>Stakeholder communication</li>
-            <li>Status reporting</li>
-            <li>Resource coordination</li>
-          </ul>
-        </div>
-        <div class="service-card clay reveal" data-tilt>
-          <div class="service-icon"><i data-lucide="settings"></i></div>
-          <h4>Back-Office Operations</h4>
-          <p>Behind-the-scenes support that keeps your business engine running, from invoicing to process management and everything in between.</p>
-          <ul class="service-list">
-            <li>Invoicing & expense tracking</li>
-            <li>Process documentation</li>
-            <li>CRM & database management</li>
-            <li>Vendor coordination</li>
-          </ul>
-        </div>
-        <div class="service-card clay reveal" data-tilt>
-          <div class="service-icon"><i data-lucide="message-circle"></i></div>
-          <h4>Communication Support</h4>
-          <p>Professional correspondence, client follow-ups, and internal communications handled with care and a personal touch.</p>
-          <ul class="service-list">
-            <li>Email drafting & responses</li>
-            <li>Client follow-ups</li>
-            <li>Meeting minutes</li>
-            <li>Internal announcements</li>
-          </ul>
-        </div>
-        <div class="service-card clay reveal" data-tilt>
-          <div class="service-icon"><i data-lucide="search"></i></div>
-          <h4>Finance & Revenue Operations</h4>
-          <p>End-to-end order-to-cash management, invoicing, collections, and data-driven reporting to keep your finances healthy and&nbsp;predictable.</p>
-          <ul class="service-list">
-            <li>Invoicing & collections</li>
-            <li>Cash flow forecasting</li>
-            <li>Expense reporting</li>
-            <li>Revenue dashboards (Excel & Power BI)</li>
+          <ul class="marquee-track" aria-hidden="true">
+            <li>Microsoft Excel</li><li>Power BI</li><li>Google Workspace</li><li>CRM systems</li><li>Accounting software</li><li>Slack</li><li>Notion</li><li>Zoom</li>
           </ul>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Portfolio -->
-  <section id="portfolio" class="portfolio section">
-    <div class="container">
-      <h2 class="section-label reveal">Portfolio</h2>
-      <h3 class="section-title reveal">Systems & SOPs<br>I've Built</h3>
-      <p class="section-sub reveal">Real operational systems I designed and implemented. Each one solved a specific business problem and delivered measurable&nbsp;results.</p>
-      <div class="portfolio-grid">
-        <div class="portfolio-card clay reveal">
-          <div class="portfolio-tag">Revenue Operations</div>
-          <h4>Order-to-Cash Pipeline</h4>
-          <p>Designed the full receivables cycle from invoicing through collections to cash flow forecasting. Built a monthly revenue dashboard in Excel that leadership relies on for pipeline tracking.</p>
-          <div class="portfolio-results">
-            <div class="portfolio-stat"><strong>15%</strong> faster collections</div>
-            <div class="portfolio-stat"><strong>6-fig</strong> monthly AR (USD)</div>
-          </div>
-          <div class="portfolio-scope">
-            <span>Invoicing SOP</span>
-            <span>Follow-up Cadence</span>
-            <span>Aging Reports</span>
-            <span>Revenue Dashboard</span>
-          </div>
+    <!-- About -->
+    <section id="about" class="section about">
+      <div class="container about-grid">
+        <div class="about-head reveal">
+          <h2>More than an assistant. <span class="accent">Your operations partner.</span></h2>
+            <ul class="tags" aria-label="Areas of expertise">
+              <li>Operations management</li>
+              <li>Process improvement</li>
+              <li>Revenue operations</li>
+              <li>Payroll &amp; finance</li>
+              <li>Vendor management</li>
+              <li>Compliance</li>
+              <li>Bilingual (EN/VI)</li>
+            </ul>
         </div>
-        <div class="portfolio-card clay reveal">
-          <div class="portfolio-tag">People Operations</div>
-          <h4>Expat Onboarding System</h4>
-          <p>Built a streamlined workflow for visa, work permit, and resident card processing for 200+ expatriates. Served as primary liaison with Immigration, Police, and the Labor&nbsp;Department.</p>
-          <div class="portfolio-results">
-            <div class="portfolio-stat"><strong>4 → 2.5</strong> week processing</div>
-            <div class="portfolio-stat"><strong>Zero</strong> compliance penalties</div>
-          </div>
-          <div class="portfolio-scope">
-            <span>Document Checklist</span>
-            <span>Government Liaison SOP</span>
-            <span>Timeline Tracker</span>
-            <span>Compliance Audit</span>
-          </div>
-        </div>
-        <div class="portfolio-card clay reveal">
-          <div class="portfolio-tag">Back-Office Operations</div>
-          <h4>Procurement & Vendor SOP</h4>
-          <p>Standardized vendor selection, contract negotiation, and purchasing workflows. Consolidated suppliers and introduced competitive bidding for recurring&nbsp;purchases.</p>
-          <div class="portfolio-results">
-            <div class="portfolio-stat"><strong>10%</strong> cost reduction</div>
-            <div class="portfolio-stat"><strong>Faster</strong> month-end closes</div>
-          </div>
-          <div class="portfolio-scope">
-            <span>Vendor Evaluation Matrix</span>
-            <span>PO Approval Flow</span>
-            <span>Contract Tracker</span>
-            <span>Expense Reporting</span>
-          </div>
-        </div>
-        <div class="portfolio-card clay reveal">
-          <div class="portfolio-tag">HR & Policy</div>
-          <h4>Employee Lifecycle Framework</h4>
-          <p>Created end-to-end HR and finance policies covering onboarding, payroll, compliance, and offboarding. Replaced ad-hoc decisions with documented, repeatable&nbsp;processes.</p>
-          <div class="portfolio-results">
-            <div class="portfolio-stat"><strong>200+</strong> employees covered</div>
-            <div class="portfolio-stat"><strong>Clearer</strong> budget visibility</div>
-          </div>
-          <div class="portfolio-scope">
-            <span>HR Policy Manual</span>
-            <span>Payroll SOP</span>
-            <span>PIT & Insurance</span>
-            <span>Onboarding Checklist</span>
-          </div>
+        <div class="about-body reveal">
+          <p>I've spent the last six years making back-office operations run smoother, faster, and more human. From managing employee lifecycle operations for 200+ expats to running full office and finance functions for growing companies, I enjoy building systems that help people do their&nbsp;best&nbsp;work.</p>
+          <p>Today, I lead receivables and sales operations, and I'm looking to bring that same energy to growing teams who need operational backbone without the overhead of a&nbsp;full-time&nbsp;hire.</p>
+          <p>I don't just complete tasks. I build processes, cut costs, streamline workflows, and make sure nothing falls through&nbsp;the&nbsp;cracks.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Why Me -->
-  <section id="why" class="why section">
-    <div class="container">
-      <h2 class="section-label reveal">Why Choose Me</h2>
-      <h3 class="section-title reveal">What Sets Me Apart</h3>
-      <div class="why-grid">
-        <div class="why-item clay reveal">
-          <div class="why-number">01</div>
-          <h4>Corporate-Grade Professionalism</h4>
-          <p>Three years managing operations for 200+ expats in a large corporate environment. I understand high standards, tight deadlines, and government&nbsp;compliance.</p>
+    <!-- Services -->
+    <section id="services" class="section services">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Services that fit how your business works</h2>
+          <p>Every business is different. Mix, match, and scale these to fit exactly what you&nbsp;need.</p>
         </div>
-        <div class="why-item clay reveal">
-          <div class="why-number">02</div>
-          <h4>Multi-Role Versatility</h4>
-          <p>I'm not limited to one function. Need admin support today and project coordination tomorrow? I seamlessly switch between roles.</p>
-        </div>
-        <div class="why-item clay reveal">
-          <div class="why-number">03</div>
-          <h4>Proactive Problem Solver</h4>
-          <p>I cut procurement spend by 10%, reduced collection time by 15%, and streamlined work permit processing from 4 weeks to 2.5. I find inefficiencies and fix them.</p>
-        </div>
-        <div class="why-item clay reveal">
-          <div class="why-number">04</div>
-          <h4>Clear Communication</h4>
-          <p>You'll always know where things stand. I provide regular updates, ask the right questions, and keep everything transparent.</p>
-        </div>
-        <div class="why-item clay reveal">
-          <div class="why-number">05</div>
-          <h4>Flexible & Scalable</h4>
-          <p>Whether you need 5 hours a week or 40, I adapt to your workload. Scale up during busy periods, scale down when things are quiet.</p>
-        </div>
-        <div class="why-item clay reveal">
-          <div class="why-number">06</div>
-          <h4>Genuine Care</h4>
-          <p>Your success is my success. I treat every client's business as if it were my own, bringing dedication and heart to everything I do.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Process -->
-  <section id="process" class="process section">
-    <div class="container">
-      <h2 class="section-label reveal">How It Works</h2>
-      <h3 class="section-title reveal">Simple Steps to<br>Getting Started</h3>
-      <div class="process-timeline">
-        <div class="process-step reveal stagger-1">
-          <div class="step-marker">1</div>
-          <div class="step-content">
-            <h4>Discovery Call</h4>
-            <p>We hop on a quick call so I can understand your business, your pain points, and exactly what kind of support you need.</p>
-          </div>
-        </div>
-        <div class="process-step reveal stagger-2">
-          <div class="step-marker">2</div>
-          <div class="step-content">
-            <h4>Custom Proposal</h4>
-            <p>I'll put together a tailored plan with clear scope, deliverables, and pricing. No surprises, no hidden fees.</p>
-          </div>
-        </div>
-        <div class="process-step reveal stagger-3">
-          <div class="step-marker">3</div>
-          <div class="step-content">
-            <h4>Onboarding</h4>
-            <p>A smooth handover where I get access to your tools, learn your preferences, and set up our communication workflow.</p>
-          </div>
-        </div>
-        <div class="process-step reveal stagger-4">
-          <div class="step-marker">4</div>
-          <div class="step-content">
-            <h4>Ongoing Support</h4>
-            <p>I get to work! Regular check-ins, transparent updates, and consistent delivery so you can focus on what you do best.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonial / Social Proof -->
-  <section class="testimonial section">
-    <div class="container">
-      <h2 class="section-label reveal">Kind Words</h2>
-      <h3 class="section-title reveal">What Clients Say</h3>
-      <div class="carousel reveal">
-        <div class="carousel-track">
-          <div class="testimonial-card active">
-            <div class="quote-mark" aria-hidden="true">"</div>
-            <p class="testimonial-text">Working with Trúc has been a game-changer for our team. She's organized, proactive, and always one step ahead. I can't imagine running my business without her support.</p>
-            <div class="testimonial-author">
-              <div class="author-avatar"><i data-lucide="star"></i></div>
-              <div>
-                <strong>Happy Client</strong>
-                <span>Business Owner</span>
-              </div>
+        <ul class="service-list">
+          <li class="service reveal">
+            <div class="service-title">
+              <span class="tile tile-blush"><i data-lucide="clipboard-list" aria-hidden="true"></i></span>
+              <h3>Operational &amp; people support</h3>
             </div>
-          </div>
-          <div class="testimonial-card">
-            <div class="quote-mark" aria-hidden="true">"</div>
-            <p class="testimonial-text">Trúc took over our admin chaos and turned it into a smooth operation within a week. She communicates clearly, delivers on time, and genuinely cares about the work. Highly recommend.</p>
-            <div class="testimonial-author">
-              <div class="author-avatar"><i data-lucide="star"></i></div>
-              <div>
-                <strong>Satisfied Client</strong>
-                <span>Startup Founder</span>
-              </div>
+            <p>Day-to-day operations, people management, and HR coordination that keep your team running smoothly and&nbsp;compliantly.</p>
+            <ul class="ticks">
+              <li>Workflow &amp; process management</li>
+              <li>Onboarding &amp; employee lifecycle</li>
+              <li>Payroll &amp; compliance</li>
+              <li>Visa &amp; work permit coordination</li>
+            </ul>
+          </li>
+          <li class="service reveal">
+            <div class="service-title">
+              <span class="tile tile-sky"><i data-lucide="wallet" aria-hidden="true"></i></span>
+              <h3>Finance &amp; revenue operations</h3>
             </div>
-          </div>
+            <p>End-to-end order-to-cash management, invoicing, collections, and data-driven reporting to keep your finances healthy and&nbsp;predictable.</p>
+            <ul class="ticks">
+              <li>Invoicing &amp; collections</li>
+              <li>Cash flow forecasting</li>
+              <li>Expense reporting</li>
+              <li>Revenue dashboards (Excel &amp; Power BI)</li>
+            </ul>
+          </li>
+          <li class="service reveal">
+            <div class="service-title">
+              <span class="tile tile-mint"><i data-lucide="settings" aria-hidden="true"></i></span>
+              <h3>Back-office operations</h3>
+            </div>
+            <p>Behind-the-scenes support that keeps your business engine running, from invoicing to process management and everything in&nbsp;between.</p>
+            <ul class="ticks">
+              <li>Invoicing &amp; expense tracking</li>
+              <li>Process documentation</li>
+              <li>CRM &amp; database management</li>
+              <li>Vendor coordination</li>
+            </ul>
+          </li>
+          <li class="service reveal">
+            <div class="service-title">
+              <span class="tile tile-butter"><i data-lucide="users" aria-hidden="true"></i></span>
+              <h3>Project coordination</h3>
+            </div>
+            <p>Keeping projects on track by managing timelines, following up with stakeholders, and making sure deliverables land on&nbsp;time.</p>
+            <ul class="ticks">
+              <li>Timeline &amp; milestone tracking</li>
+              <li>Stakeholder communication</li>
+              <li>Status reporting</li>
+              <li>Resource coordination</li>
+            </ul>
+          </li>
+          <li class="service reveal">
+            <div class="service-title">
+              <span class="tile tile-blush"><i data-lucide="file-text" aria-hidden="true"></i></span>
+              <h3>Documentation &amp; reports</h3>
+            </div>
+            <p>Professional document creation, formatting, proofreading, and report generation, so everything is polished and&nbsp;presentation-ready.</p>
+            <ul class="ticks">
+              <li>Report writing &amp; formatting</li>
+              <li>Presentation creation</li>
+              <li>Proofreading &amp; editing</li>
+              <li>Template development</li>
+            </ul>
+          </li>
+          <li class="service reveal">
+            <div class="service-title">
+              <span class="tile tile-sky"><i data-lucide="message-circle" aria-hidden="true"></i></span>
+              <h3>Communication support</h3>
+            </div>
+            <p>Professional correspondence, client follow-ups, and internal communications handled with care and a personal&nbsp;touch.</p>
+            <ul class="ticks">
+              <li>Email drafting &amp; responses</li>
+              <li>Client follow-ups</li>
+              <li>Meeting minutes</li>
+              <li>Internal announcements</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="section portfolio">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Systems &amp; SOPs I've built</h2>
+          <p>Real operational systems I designed and implemented. Each one solved a specific business problem and delivered measurable&nbsp;results.</p>
         </div>
-        <div class="carousel-dots">
-          <button class="carousel-arrow carousel-prev" aria-label="Previous"><i data-lucide="chevron-left"></i></button>
-          <button class="dot active" aria-label="Testimonial 1"></button>
-          <button class="dot" aria-label="Testimonial 2"></button>
-          <button class="carousel-arrow carousel-next" aria-label="Next"><i data-lucide="chevron-right"></i></button>
+        <div class="case-grid">
+          <article class="case case-sky reveal">
+            <h3>Order-to-cash pipeline</h3>
+            <p class="pill">Revenue operations</p>
+            <p>Designed the full receivables cycle from invoicing through collections to cash flow forecasting. Built a monthly revenue dashboard in Excel that leadership relies on for pipeline&nbsp;tracking.</p>
+            <dl class="results">
+              <div><dt>faster collections</dt><dd>15%</dd></div>
+              <div><dt>monthly AR (USD)</dt><dd>6-fig</dd></div>
+            </dl>
+            <ul class="scope" aria-label="What I built">
+              <li>Invoicing SOP</li><li>Follow-up cadence</li><li>Aging reports</li><li>Revenue dashboard</li>
+            </ul>
+          </article>
+          <article class="case case-mint reveal">
+            <h3>Expat onboarding system</h3>
+            <p class="pill">People operations</p>
+            <p>Built a streamlined workflow for visa, work permit, and resident card processing for 200+ expatriates. Served as primary liaison with Immigration, Police, and the Labor&nbsp;Department.</p>
+            <dl class="results">
+              <div><dt>weeks processing, down from 4</dt><dd>2.5</dd></div>
+              <div><dt>compliance penalties</dt><dd>Zero</dd></div>
+            </dl>
+            <ul class="scope" aria-label="What I built">
+              <li>Document checklist</li><li>Government liaison SOP</li><li>Timeline tracker</li><li>Compliance audit</li>
+            </ul>
+          </article>
+          <article class="case case-butter reveal">
+            <h3>Procurement &amp; vendor SOP</h3>
+            <p class="pill">Back-office operations</p>
+            <p>Standardized vendor selection, contract negotiation, and purchasing workflows. Consolidated suppliers and introduced competitive bidding for recurring&nbsp;purchases.</p>
+            <dl class="results">
+              <div><dt>cost reduction</dt><dd>10%</dd></div>
+            </dl>
+            <p class="also">Also: faster month-end closes.</p>
+            <ul class="scope" aria-label="What I built">
+              <li>Vendor evaluation matrix</li><li>PO approval flow</li><li>Contract tracker</li><li>Expense reporting</li>
+            </ul>
+          </article>
+          <article class="case case-blush reveal">
+            <h3>Employee lifecycle framework</h3>
+            <p class="pill">HR &amp; policy</p>
+            <p>Created end-to-end HR and finance policies covering onboarding, payroll, compliance, and offboarding. Replaced ad-hoc decisions with documented, repeatable&nbsp;processes.</p>
+            <dl class="results">
+              <div><dt>employees covered</dt><dd>200+</dd></div>
+            </dl>
+            <p class="also">Also: clearer budget visibility.</p>
+            <ul class="scope" aria-label="What I built">
+              <li>HR policy manual</li><li>Payroll SOP</li><li>PIT &amp; insurance</li><li>Onboarding checklist</li>
+            </ul>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact" class="contact section">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h2 class="section-label reveal">Get In Touch</h2>
-          <h3 class="section-title reveal">Ready to Lighten<br>Your Workload?</h3>
-          <p class="reveal">Let's chat about how I can support your business. Whether you have a specific project in mind or just need an extra pair of hands, I'd love to hear&nbsp;from&nbsp;you.</p>
-          <p class="reveal">Not ready to commit? Book a consulting call to pick my brain on operations, HR, finance, or process&nbsp;improvement.</p>
+    <!-- Why me -->
+    <section id="why" class="section why">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>What sets me apart</h2>
         </div>
-        <form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/mjgjwkya" method="POST">
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required placeholder="Jane Doe">
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required placeholder="jane@example.com">
-          </div>
-          <div class="form-group">
-            <label for="service">What Do You Need Help With?</label>
-            <select id="service" name="service">
-              <option value="">Select a service…</option>
-              <option value="admin">Operational Support</option>
-              <option value="docs">Documentation & Reports</option>
-              <option value="coordination">Project Coordination</option>
-              <option value="backoffice">Back-Office Operations</option>
-              <option value="communication">Communication Support</option>
-              <option value="research">Finance & Revenue Operations</option>
-              <option value="other">Other / Not Sure Yet</option>
-              <option value="consulting">Consulting Call</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">Tell Me More</label>
-            <textarea id="message" name="message" rows="4" placeholder="A brief description of what you need…"></textarea>
-          </div>
-          <div class="g-recaptcha" data-sitekey="6LdITLwsAAAAAK3EXDt-XoGrtU1aT-FqTMQ84Qpp" data-theme="dark" style="margin-bottom:16px;transform:scale(0.85);transform-origin:left top"></div>
-          <button type="submit" class="btn btn-primary btn-full">Send Message <i data-lucide="send" class="icon-inline"></i></button>
-        </form>
+        <ul class="why-list">
+          <li class="reveal">
+            <h3>Corporate-grade professionalism</h3>
+            <p>Three years managing operations for 200+ expats in a large corporate environment. I understand high standards, tight deadlines, and government&nbsp;compliance.</p>
+          </li>
+          <li class="reveal">
+            <h3>Multi-role versatility</h3>
+            <p>I'm not limited to one function. Need admin support today and project coordination tomorrow? I switch between roles&nbsp;easily.</p>
+          </li>
+          <li class="reveal">
+            <h3>Proactive problem solver</h3>
+            <p>I cut procurement spend by 10%, reduced collection time by 15%, and streamlined work permit processing from 4 weeks to 2.5. I find inefficiencies and fix&nbsp;them.</p>
+          </li>
+          <li class="reveal">
+            <h3>Clear communication</h3>
+            <p>Bilingual EN/VI. As main contact with Immigration, Police and the Labor Department, I kept 200+ expat cases moving with zero&nbsp;penalties.</p>
+          </li>
+          <li class="reveal">
+            <h3>Flexible &amp; scalable</h3>
+            <p>5 to 40 hours a week. Scale up for month-end or a hiring push, scale down when it's&nbsp;quiet.</p>
+          </li>
+          <li class="reveal">
+            <h3>Genuine care</h3>
+            <p>I've run the work that keeps people paid and legal: payroll, PIT and insurance, visas for 200+&nbsp;expats.</p>
+          </li>
+        </ul>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
+    <!-- Process -->
+    <section id="process" class="section process">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Getting started is simple</h2>
+        </div>
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">1</span>
+            <h3>Discovery call</h3>
+            <p>We hop on a quick call so I can understand your business, your pain points, and exactly what kind of support you&nbsp;need.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">2</span>
+            <h3>Custom proposal</h3>
+            <p>I put together a tailored plan with clear scope, deliverables, and pricing. No surprises, no hidden&nbsp;fees.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">3</span>
+            <h3>Onboarding</h3>
+            <p>A smooth handover where I get access to your tools, learn your preferences, and set up how we&nbsp;communicate.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">4</span>
+            <h3>Ongoing support</h3>
+            <p>I get to work! Regular check-ins, transparent updates, and consistent delivery so you can focus on what you do&nbsp;best.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <div class="contact-panel">
+          <div class="contact-copy">
+            <h2>Ready to lighten your workload?</h2>
+            <p>Let's chat about how I can support your business. Whether you have a specific project in mind or just need an extra pair of hands, I'd love to hear from&nbsp;you.</p>
+            <p>Not ready to commit? <a href="#contact" class="text-link" data-service="consulting">Book a consulting call</a> to pick my brain on operations, HR, finance, or process&nbsp;improvement.</p>
+          </div>
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/mjgjwkya" method="POST">
+            <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="field">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" required autocomplete="name" placeholder="Jane Doe">
+            </div>
+            <div class="field">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="jane@example.com">
+            </div>
+            <div class="field">
+              <label for="service">What do you need help with?</label>
+              <select id="service" name="service">
+                <option value="">Select a service…</option>
+                <option value="admin">Operational support</option>
+                <option value="docs">Documentation &amp; reports</option>
+                <option value="coordination">Project coordination</option>
+                <option value="backoffice">Back-office operations</option>
+                <option value="communication">Communication support</option>
+                <option value="research">Finance &amp; revenue operations</option>
+                <option value="consulting">Consulting call</option>
+                <option value="other">Other / not sure yet</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Tell me more</label>
+              <textarea id="message" name="message" rows="4" placeholder="A brief description of what you need…"></textarea>
+            </div>
+            <div class="g-recaptcha" data-sitekey="6LdITLwsAAAAAK3EXDt-XoGrtU1aT-FqTMQ84Qpp"></div>
+            <button type="submit" class="btn btn-primary btn-full">Send message <i data-lucide="send" aria-hidden="true"></i></button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <footer class="footer">
-    <div class="container footer-content">
-      <a href="#hero" class="footer-logo">Truc <span>Tran</span></a>
-      <p>© 2026 Trúc | Virtual Assistant Services. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-      </div>
+    <div class="container footer-row">
+      <a href="#top" class="wordmark">Trúc Trần</a>
+      <p>© 2026 Trúc Trần · Operations &amp; back-office support</p>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
   </footer>
 
-  <!-- Theme toggle -->
-  <button class="theme-toggle" aria-label="Switch theme">💎</button>
-
-  <!-- Floating CTA (mobile) -->
-  <a href="#contact" class="floating-cta">Let's Talk</a>
-
-  <!-- Back to top -->
-  <button class="back-to-top" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
-
-  <script src="script.js"></script>
+  <a href="#contact" class="floating-cta btn btn-primary">Let's talk</a>
+  <button class="icon-btn back-to-top" type="button" aria-label="Back to top"><i data-lucide="arrow-up" aria-hidden="true"></i></button>
 </body>
 </html>
