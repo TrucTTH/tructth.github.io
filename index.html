@@ -103,9 +103,12 @@
           <p>I&#39;ve spent the last six years making back-office operations run smoother, faster, and more human. From managing employee lifecycle operations for 200+ expats to running full office and finance functions for growing companies, I enjoy building systems that help people do their&nbsp;best&nbsp;work.</p>
           <p>Today, I lead receivables and sales operations, and I&#39;m looking to bring that same energy to growing teams who need operational backbone without the overhead of a&nbsp;full-time&nbsp;hire.</p>
           <p>I don&#39;t just complete tasks. I build processes, cut costs, streamline workflows, and make sure nothing falls through&nbsp;the&nbsp;cracks.</p>
+          <ul class="tags" aria-label="Areas of expertise">
+            <li>Operations management</li><li>Process improvement</li><li>Revenue operations</li><li>Payroll &amp; finance</li><li>Vendor management</li><li>Compliance</li><li>Bilingual (EN/VI)</li>
+          </ul>
         </div>
         <div class="about-side">
-          <div class="card diagram-card"><div class="dg" data-diagram data-dg-still><script type="application/json">{"layout": "hub", "size": "card", "ground": "none", "motion": {"pulse": "none"},
+          <div class="card diagram-card"><div class="dg" data-diagram data-dg-still data-area-diagram><script type="application/json">{"layout": "hub", "size": "card", "ground": "none", "motion": {"pulse": "none"},
  "alt": "Trúc covers operations, finance and revenue, people and HR, documentation, projects and communication, with the tools she uses for each.",
  "center": {"label": "Trúc Trần"},
  "spokes": [
@@ -116,9 +119,13 @@
   {"label": "Projects", "icon": "ui:calendar-check"},
   {"label": "Communication", "icon": "ui:message-circle"}
  ]}</script></div></div>
-          <ul class="tags" aria-label="Areas of expertise">
-            <li>Operations management</li><li>Process improvement</li><li>Revenue operations</li><li>Payroll &amp; finance</li><li>Vendor management</li><li>Compliance</li><li>Bilingual (EN/VI)</li>
-          </ul>
+          <div class="area-picker" role="group" aria-label="Pick an area to see the work"><button type="button" class="area-btn" data-area="operations" data-target="svc-backoffice" data-form="backoffice" aria-pressed="true" aria-controls="area-panel">Operations</button><button type="button" class="area-btn" data-area="finance" data-target="svc-finance" data-form="research" aria-pressed="false" aria-controls="area-panel">Finance</button><button type="button" class="area-btn" data-area="people-hr" data-target="svc-people" data-form="admin" aria-pressed="false" aria-controls="area-panel">People &amp; HR</button><button type="button" class="area-btn" data-area="documents" data-target="svc-docs" data-form="docs" aria-pressed="false" aria-controls="area-panel">Documents</button><button type="button" class="area-btn" data-area="projects" data-target="svc-projects" data-form="coordination" aria-pressed="false" aria-controls="area-panel">Projects</button><button type="button" class="area-btn" data-area="communication" data-target="svc-comms" data-form="communication" aria-pressed="false" aria-controls="area-panel">Communication</button></div>
+          <div class="area-panel" id="area-panel" aria-live="polite">
+            <h3 class="area-title">Back-office operations</h3>
+            <p class="area-text">Behind-the-scenes support that keeps your business engine running, from invoicing to process management and everything in&nbsp;between.</p>
+            <ul class="area-ticks"><li>Invoicing &amp; expense tracking</li><li>Process documentation</li><li>CRM &amp; database management</li><li>Vendor coordination</li></ul>
+            <p class="area-links"><a class="text-link area-more" href="#svc-backoffice">See the service</a><a class="text-link area-ask" href="#contact" data-service="backoffice">Ask about this area</a></p>
+          </div>
         </div>
       </div>
     </section>
@@ -131,7 +138,7 @@
             <p>Every business is different. Mix, match, and scale these to fit exactly what you&nbsp;need.</p>
           </div>
           <ul class="card-row">
-              <li class="card service">
+              <li class="card service" id="svc-people">
                 <div class="service-title">
                   <span class="tile tile-blush"><i data-lucide="clipboard-list" aria-hidden="true"></i></span>
                   <h3>Operational &amp; people support</h3>
@@ -139,7 +146,7 @@
                 <p>Day-to-day operations, people management, and HR coordination that keep your team running smoothly and&nbsp;compliantly.</p>
                 <ul class="ticks"><li>Workflow &amp; process management</li><li>Onboarding &amp; employee lifecycle</li><li>Payroll &amp; compliance</li><li>Visa &amp; work permit coordination</li></ul>
               </li>
-              <li class="card service">
+              <li class="card service" id="svc-finance">
                 <div class="service-title">
                   <span class="tile tile-sky"><i data-lucide="wallet" aria-hidden="true"></i></span>
                   <h3>Finance &amp; revenue operations</h3>
@@ -148,7 +155,7 @@
                 <ul class="ticks"><li>Invoicing &amp; collections</li><li>Cash flow forecasting</li><li>Expense reporting</li><li>Revenue dashboards (Excel &amp; Power BI)</li></ul>
                 <p class="tools" aria-label="Tools"><img class="tool-ic" src="assets/icons/xlsx.svg" alt="Excel" width="20" height="20"><img class="tool-ic" src="assets/icons/power-bi.svg" alt="Power BI" width="20" height="20"></p>
               </li>
-              <li class="card service">
+              <li class="card service" id="svc-backoffice">
                 <div class="service-title">
                   <span class="tile tile-mint"><i data-lucide="settings" aria-hidden="true"></i></span>
                   <h3>Back-office operations</h3>
@@ -160,7 +167,7 @@
         </div>
         <div class="group">
           <ul class="card-row">
-              <li class="card service">
+              <li class="card service" id="svc-projects">
                 <div class="service-title">
                   <span class="tile tile-butter"><i data-lucide="users" aria-hidden="true"></i></span>
                   <h3>Project coordination</h3>
@@ -169,7 +176,7 @@
                 <ul class="ticks"><li>Timeline &amp; milestone tracking</li><li>Stakeholder communication</li><li>Status reporting</li><li>Resource coordination</li></ul>
                 <p class="tools" aria-label="Tools"><img class="tool-ic" src="assets/icons/notion.svg" alt="Notion" width="20" height="20"></p>
               </li>
-              <li class="card service">
+              <li class="card service" id="svc-docs">
                 <div class="service-title">
                   <span class="tile tile-blush"><i data-lucide="file-text" aria-hidden="true"></i></span>
                   <h3>Documentation &amp; reports</h3>
@@ -178,7 +185,7 @@
                 <ul class="ticks"><li>Report writing &amp; formatting</li><li>Presentation creation</li><li>Proofreading &amp; editing</li><li>Template development</li></ul>
                 <p class="tools" aria-label="Tools"><img class="tool-ic" src="assets/icons/google-docs.svg" alt="Google Docs" width="20" height="20"></p>
               </li>
-              <li class="card service">
+              <li class="card service" id="svc-comms">
                 <div class="service-title">
                   <span class="tile tile-sky"><i data-lucide="message-circle" aria-hidden="true"></i></span>
                   <h3>Communication support</h3>
@@ -212,6 +219,7 @@
                 <dl class="results"><div><dt>faster collections</dt><dd>15%</dd></div><div><dt>monthly AR (USD)</dt><dd>6-fig</dd></div></dl>
                 <p class="tools" aria-label="Built in"><img class="tool-ic" src="assets/icons/xlsx.svg" alt="Excel" width="20" height="20"></p>
                 <ul class="scope" aria-label="What I built"><li>Invoicing SOP</li><li>Follow-up cadence</li><li>Aging reports</li><li>Revenue dashboard</li></ul>
+                <a class="case-link" href="cases/order-to-cash.html">Read the case study<span class="visually-hidden">: Order-to-cash pipeline</span> <i data-lucide="arrow-right" aria-hidden="true"></i></a>
               </article>
               <article class="card case case-mint">
                 <h3>Expat onboarding system</h3>
@@ -219,6 +227,7 @@
                 <p>Built a streamlined workflow for visa, work permit, and resident card processing for 200+ expatriates. Served as primary liaison with Immigration, Police, and the Labor&nbsp;Department.</p>
                 <dl class="results"><div><dt>weeks processing, down from 4</dt><dd>2.5</dd></div><div><dt>compliance penalties</dt><dd>Zero</dd></div></dl>
                 <ul class="scope" aria-label="What I built"><li>Document checklist</li><li>Government liaison SOP</li><li>Timeline tracker</li><li>Compliance audit</li></ul>
+                <a class="case-link" href="cases/expat-onboarding.html">Read the case study<span class="visually-hidden">: Expat onboarding system</span> <i data-lucide="arrow-right" aria-hidden="true"></i></a>
               </article>
           </div>
         </div>
@@ -231,6 +240,7 @@
                 <dl class="results"><div><dt>cost reduction</dt><dd>10%</dd></div></dl>
                 <p class="also">Also: faster month-end closes.</p>
                 <ul class="scope" aria-label="What I built"><li>Vendor evaluation matrix</li><li>PO approval flow</li><li>Contract tracker</li><li>Expense reporting</li></ul>
+                <a class="case-link" href="cases/procurement-vendor.html">Read the case study<span class="visually-hidden">: Procurement &amp; vendor SOP</span> <i data-lucide="arrow-right" aria-hidden="true"></i></a>
               </article>
               <article class="card case case-blush">
                 <h3>Employee lifecycle framework</h3>
@@ -239,6 +249,7 @@
                 <dl class="results"><div><dt>employees covered</dt><dd>200+</dd></div></dl>
                 <p class="also">Also: clearer budget visibility.</p>
                 <ul class="scope" aria-label="What I built"><li>HR policy manual</li><li>Payroll SOP</li><li>PIT &amp; insurance</li><li>Onboarding checklist</li></ul>
+                <a class="case-link" href="cases/employee-lifecycle.html">Read the case study<span class="visually-hidden">: Employee lifecycle framework</span> <i data-lucide="arrow-right" aria-hidden="true"></i></a>
               </article>
           </div>
           <dl class="stats">

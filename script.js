@@ -16,6 +16,7 @@
   // ── Mobile menu ──
   const toggle = document.querySelector('.nav-toggle');
   const links = document.getElementById('nav-links');
+  if (toggle && links) {
   const setMenu = open => {
     links.classList.toggle('open', open);
     toggle.setAttribute('aria-expanded', String(open));
@@ -26,6 +27,7 @@
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && links.classList.contains('open')) { setMenu(false); toggle.focus(); }
   });
+  }
 
   // ── Theme toggle (light / dark), stored per visitor ──
   const themeBtn = document.querySelector('.theme-toggle');
@@ -66,15 +68,62 @@
     counters.forEach(el => co.observe(el));
   }
 
+  // ── About diagram: click an area (node or button) to see that work ──
+  const picker = document.querySelector('.area-picker');
+  const dg = document.querySelector('[data-area-diagram]');
+  if (picker) {
+    const panel = document.getElementById('area-panel');
+    const btns = [...picker.querySelectorAll('.area-btn')];
+    let current = btns.find(b => b.getAttribute('aria-pressed') === 'true') || btns[0];
+    const markNode = () => {
+      if (!dg) return;
+      dg.querySelectorAll('.dg-node[data-id]').forEach(n => n.classList.toggle('is-picked', n.dataset.id === current.dataset.area));
+    };
+    const show = btn => {
+      current = btn;
+      btns.forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+      // The panel reads the matching service card, so the copy lives in one place.
+      const card = document.getElementById(btn.dataset.target);
+      if (!card) return;
+      panel.querySelector('.area-title').textContent = card.querySelector('h3').textContent;
+      panel.querySelector('.area-text').textContent = card.querySelector(':scope > p').textContent;
+      panel.querySelector('.area-ticks').replaceChildren(...[...card.querySelectorAll('.ticks li')].map(li => li.cloneNode(true)));
+      panel.querySelector('.area-more').setAttribute('href', '#' + btn.dataset.target);
+      panel.querySelector('.area-ask').dataset.service = btn.dataset.form;
+      markNode();
+    };
+    picker.addEventListener('click', e => { const b = e.target.closest('.area-btn'); if (b) show(b); });
+    if (dg) {
+      dg.addEventListener('click', e => {
+        const node = e.target.closest('.dg-node[data-id]');
+        const b = node && btns.find(x => x.dataset.area === node.dataset.id);
+        if (b) show(b);
+      });
+      // The diagram redraws its nodes on resize; keep the picked one marked.
+      new MutationObserver(markNode).observe(dg, { childList: true });
+      markNode();
+    }
+  }
+
   // ── Contact form (Formspree) ──
   const form = document.getElementById('contactForm');
+  if (form) {
   // "Book a consulting call" preselects that option and moves focus to the form.
-  document.querySelectorAll('[data-service]').forEach(link => link.addEventListener('click', e => {
-    e.preventDefault();
-    form.elements.service.value = link.dataset.service;
+  const pickService = value => {
+    form.elements.service.value = value;
     form.elements.name.focus({ preventScroll: true });
     form.scrollIntoView({ block: 'center' });
-  }));
+  };
+  // Links read data-service at click time (the area panel changes it).
+  document.addEventListener('click', e => {
+    const link = e.target.closest('a[data-service]');
+    if (!link) return;
+    e.preventDefault();
+    pickService(link.dataset.service);
+  });
+  // A case page links here as ?service=<value>#contact.
+  const wanted = new URLSearchParams(location.search).get('service');
+  if (wanted && [...form.elements.service.options].some(o => o.value === wanted)) form.elements.service.value = wanted;
   const status = form.querySelector('.form-status');
   const submitBtn = form.querySelector('button[type="submit"]');
   const submitHTML = submitBtn.innerHTML;
@@ -105,4 +154,5 @@
       submitBtn.innerHTML = submitHTML;
     }
   });
+  }
 })();
