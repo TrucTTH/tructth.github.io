@@ -7,26 +7,11 @@
 
   if (window.lucide) window.lucide.createIcons();
 
-  // ── Header shadow on scroll, floating CTA, back to top ──
+  // ── Header shadow on scroll ──
   const header = document.querySelector('.site-header');
-  const fcta = document.querySelector('.floating-cta');
-  const btt = document.querySelector('.back-to-top');
-  const contact = document.getElementById('contact');
-  const heroCta = document.querySelector('.hero-cta');
-  let heroCtaVisible = true;
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(([entry]) => { heroCtaVisible = entry.isIntersecting; onScroll(); }).observe(heroCta);
-  }
-  const onScroll = () => {
-    const y = window.scrollY;
-    header.classList.toggle('scrolled', y > 8);
-    btt.classList.toggle('visible', y > 600);
-    // Floating CTA only once the hero buttons are out of view, and never over the form.
-    fcta.classList.toggle('visible', !heroCtaVisible && y > 200 && contact.getBoundingClientRect().top > window.innerHeight * 0.6);
-  };
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
-  btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }));
 
   // ── Mobile menu ──
   const toggle = document.querySelector('.nav-toggle');
@@ -48,7 +33,7 @@
     const t = root.getAttribute('data-theme');
     return t ? t === 'dark' : DARK_QUERY.matches;
   };
-  const syncThemeLabel = () => themeBtn.setAttribute('aria-label', isDark() ? 'Switch to light theme' : 'Switch to dark theme');
+  const syncThemeLabel = () => themeBtn.setAttribute('aria-pressed', String(isDark()));
   syncThemeLabel();
   themeBtn.addEventListener('click', () => {
     const next = isDark() ? 'light' : 'dark';
@@ -57,21 +42,6 @@
     syncThemeLabel();
   });
   DARK_QUERY.addEventListener('change', syncThemeLabel);
-
-  // ── Reveal on scroll ──
-  const reveals = document.querySelectorAll('.reveal');
-  if (reduceMotion || !('IntersectionObserver' in window)) {
-    reveals.forEach(el => el.classList.add('in'));
-  } else {
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('in');
-        io.unobserve(entry.target);
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(el => io.observe(el));
-  }
 
   // ── Counting stats (HTML holds the final value, so no-JS shows real numbers) ──
   const COUNT_MS = 1400;
@@ -103,7 +73,7 @@
     e.preventDefault();
     form.elements.service.value = link.dataset.service;
     form.elements.name.focus({ preventScroll: true });
-    form.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+    form.scrollIntoView({ block: 'center' });
   }));
   const status = form.querySelector('.form-status');
   const submitBtn = form.querySelector('button[type="submit"]');
